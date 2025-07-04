@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+// develop branch
+
 public class generate {
     public String title() {
         System.out.println("게시판 제목을 입력하세요");
