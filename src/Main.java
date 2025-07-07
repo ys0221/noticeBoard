@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-// develop branch
 
 public class Main {
     public static void state() {
@@ -29,7 +28,25 @@ public class Main {
                 select = funcscanner.nextInt();
             } else if (select == 2) {
                 // 수정
-                break;
+                Modify modify = new Modify();
+                System.out.println("1.제목만 수정 2.내용만 수정 3.제목과 내용 모두 수정 4.수정 그만");
+                Scanner optionScanner = new Scanner(System.in);
+                int modifyOption = optionScanner.nextInt();
+                while (modifyOption < 1 || modifyOption > 3) {
+                    System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
+                    modifyOption = optionScanner.nextInt();
+                }
+                if (modifyOption == 1) {
+                    modify.title(board);
+                } else if(modifyOption == 2) {
+                    modify.text(board);
+                } else if(modifyOption == 3) {
+                    modify.titleAndText(board);
+                } else {
+                    // nothing
+                }
+                state();
+                select = funcscanner.nextInt();
             } else if (select == 3) {
                 // 삭제
                 break;
