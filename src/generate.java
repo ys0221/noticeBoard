@@ -1,6 +1,5 @@
+import java.util.Map;
 import java.util.Scanner;
-
-// develop branch
 
 public class generate {
     public String title() {
@@ -14,5 +13,11 @@ public class generate {
         Scanner textScanner = new Scanner(System.in);
         String text = textScanner.nextLine();
         return text;
+    }
+    public void duplicate(Map<String, String> board, String t) {
+        while(board.containsKey(t)) {
+            System.out.println("이미 존재하는 게시물 제목입니다. 다른 제목을 입력해주세요");
+            t = title();
+        }
     }
 }
